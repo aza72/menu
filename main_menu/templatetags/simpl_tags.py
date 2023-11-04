@@ -1,6 +1,5 @@
 from django import template
 from main_menu.models import MenuItem
-#from bs4 import BeautifulSoup
 from django.utils.safestring import mark_safe
 
 
@@ -21,5 +20,4 @@ def render_menu(menu):
             result += render_menu(item.children.all())
         result += '</li>'
     result += '</ul>'
-    print(menu)
     return result
